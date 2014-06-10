@@ -1,0 +1,25 @@
+<div class="page_header">
+      <h1>All books</h1>
+    </div>
+
+<%= link_to "Hey! I've just read a new book!", new_book_path, class: "btn btn-info" %> <br>
+<hr>
+
+<% @books.each do |book| %>
+      <div class="book">
+        <strong><%= book.title %></strong></br>
+        <strong><%= book.author %></strong>
+        <p><%= book.description %></p>
+            <div class="meta">
+              <%= link_to time_ago_in_words(book.created_at) +" ago", book %>
+                 <p>   <span class="admin">                   
+                       | <%= link_to "Edit", edit_book_path(book) %> |
+                      <%= link_to "Delete", book, method: :delete, data: { confirm: "Are you sure?"} %> |
+                   <%= link_to "Comment (#{book.comments.count})", book %>
+                   </span> </p>
+              <hr>
+            </div>
+        
+        <% end %>
+
+
