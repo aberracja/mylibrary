@@ -1,9 +1,19 @@
 source 'https://rubygems.org'
 
+gem 'nokogiri'
+
 group :development, :test do
   gem 'rspec'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', "~> 2.14"
+  gem 'factory_girl_rails'
+  gem 'capybara', "2.1.0"
+  gem 'database_cleaner'
+  #  gem 'launchy'
+  gem 'selenium-webdriver'
 end
+
+
+  
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
